@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/MathExpressionModel/src-gen" creationIcons="false"
+    editDirectory="/MathExpressionModel.edit/src-gen" editorDirectory="/MathExpressionModel.editor/src-gen"
+    modelPluginID="MathExpressionModel" modelName="MathExpressionModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>mathExpressionModel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="MathExpressionModel" disposableProviderFactory="true" ecorePackage="mathExpressionModel.ecore#/">
+    <genClasses image="false" ecoreClass="mathExpressionModel.ecore#//Expression"/>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Number">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mathExpressionModel.ecore#//Number/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mathExpressionModel.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Addition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Addition/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Addition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Multiplication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Multiplication/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Multiplication/right"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Division">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Division/numerator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Division/denominator"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Sqrt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Sqrt/radicand"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mathExpressionModel.ecore#//Constant/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Power">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Power/base"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Power/exponent"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Modulo">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Modulo/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Modulo/right"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Factorial">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Factorial/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Absolute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Absolute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Sum">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Sum/lower"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Sum/upper"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Sum/body"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Integral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Integral/lower"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Integral/upper"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Integral/body"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Product">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Product/lower"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Product/upper"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//FunctionCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mathExpressionModel.ecore#//FunctionCall/func"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//FunctionCall/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//Parenthesized">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//Parenthesized/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//MatrixExpr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//MatrixExpr/content"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//MatrixContent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//MatrixContent/rows"/>
+    </genClasses>
+    <genClasses ecoreClass="mathExpressionModel.ecore#//MatrixRow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mathExpressionModel.ecore#//MatrixRow/elements"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

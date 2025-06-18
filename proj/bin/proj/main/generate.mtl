@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module generate('http://math')]
+
+[template public generateExpressionText(e : Expression)]
+  [if (e.oclIsKindOf(Addition))]
+    [generateExpressionText(e.oclAsType(Addition).left)/] + [generateExpressionText(e.oclAsType(Addition).right)/]
+  [elseif (e.oclIsKindOf(Number))]
+   [e.oclAsType(Number).value/]
+  [elseif (e.oclIsKindOf(Variable))]
+   [e.oclAsType(Variable).name/]
+  [elseif (e.oclIsKindOf(Multiplication))]
+    [generateExpressionText(e.oclAsType(Multiplication).left)/] * [generateExpressionText(e.oclAsType(Multiplication).right)/]
+  [elseif (e.oclIsKindOf(Division))]
+    [generateExpressionText(e.oclAsType(Division).numerator)/] / [generateExpressionText(e.oclAsType(Division).denominator)/]
+  [elseif (e.oclIsKindOf(Sqrt))]
+    sqrt([generateExpressionText(e.oclAsType(Sqrt).radicand)/])
+  [elseif (e.oclIsKindOf(Power))]
+    [generateExpressionText(e.oclAsType(Power).base)/]^[generateExpressionText(e.oclAsType(Power).exponent)/]
+  [elseif (e.oclIsKindOf(Parenthesized))]
+    ([generateExpressionText(e.oclAsType(Parenthesized).expr)/])
+  [else]
+    Unknown
+  [/if]
+[/template]
+
+[template public generateExpression(e : Expression)]
+[comment @main/]
+[file('output.tex', false, 'UTF-8')]
+  [generateExpressionText(e)/]
+[/file]
+[/template]
